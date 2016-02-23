@@ -1,0 +1,4 @@
+[submodule "content"]
+	path = content
+	url = https://github.com/shiva/blog-posts.git
+	branch = all_md
