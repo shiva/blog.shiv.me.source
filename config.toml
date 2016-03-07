@@ -17,6 +17,7 @@ copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
 [taxonomies]
     tag = "tags"
     category = "categories"
+    series = "series"
 
 [permalinks]
     # Permalink format for pages.
@@ -31,8 +32,11 @@ copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
     # See above for preview and list of color schemes.
     colorscheme = "white"
 
+    # Title. Some themes like This
+    title = "shiv.me"
+
     # Tagline; HTML accepted here. Keep it concise.
-    tagline = "Your Tagline"
+    tagline = "some other stuff"
 
     # Footer; Markdown accepted here.
     # footer = "Copyright 2016 &copy; Shivanand Velmurugan"
