@@ -2,3 +2,15 @@
 	path = content
 	url = https://github.com/shiva/blog-posts.git
 	branch = all_md
+[submodule "themes/startbootstrap-clean-blog"]
+	path = themes/startbootstrap-clean-blog
+	url = git@github.com:shiva/startbootstrap-clean-blog.git
+[submodule "themes/purehugo"]
+	path = themes/purehugo
+	url = git@github.com:shiva/purehugo.git
+[submodule "themes/lanyon"]
+	path = themes/lanyon
+	url = git@github.com:shiva/lanyon-hugo.git
+[submodule "themes/hyde"]
+	path = themes/hyde
+	url = git@github.com:shiva/hyde.git
