@@ -5,12 +5,16 @@
 [submodule "themes/startbootstrap-clean-blog"]
 	path = themes/startbootstrap-clean-blog
 	url = git@github.com:shiva/startbootstrap-clean-blog.git
+	branch = shiv.me
 [submodule "themes/purehugo"]
 	path = themes/purehugo
 	url = git@github.com:shiva/purehugo.git
+	branch = shiv.me
 [submodule "themes/lanyon"]
 	path = themes/lanyon
 	url = git@github.com:shiva/lanyon-hugo.git
+	branch = shiv.me
 [submodule "themes/hyde"]
 	path = themes/hyde
 	url = git@github.com:shiva/hyde.git
+	branch = shiv.me
