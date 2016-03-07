@@ -1,7 +1,7 @@
 # config.toml
 # https://github.com/CrimsonRay/slender
 
-baseurl = "/"
+baseurl = "http://blog.shiv.me/"
 title = "shiv.me"
 languageCode = "en-US"
 #MetaDataFormat = "yaml"
@@ -24,7 +24,7 @@ copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
     page = "/:title/"
 
     # Permalink format for blog posts.
-    post = "/:year/:month/:slug/"
+    post = "/:year/:month/:day/:slug/"
 
 [params]
 
