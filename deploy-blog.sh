@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 
-CONTENT_BRANCH="all_md"
 GITHUB_PUBLISH_BRANCH="master"
 # Save some useful information
 BLOG_REPO="https://github.com/shiva/blog.shiv.me.source.git"
@@ -9,7 +8,7 @@ BLOG_BRANCH="master"
 BLOG_REPO_WITH_TOKEN=${BLOG_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$CONTENT_BRANCH" ]; then
+if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$BLOG_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
     exit 0
 fi
