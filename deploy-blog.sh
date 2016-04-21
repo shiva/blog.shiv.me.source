@@ -1,8 +1,10 @@
-#!/bin/bash
+!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 
-GITHUB_PUBLISH_BRANCH="master"
 # Save some useful information
+TRAVIS_AUTHOR="Travis CI"
+TRAVIS_EMAIL="travis@shiv.me"
+GITHUB_PUBLISH_BRANCH="master"
 BLOG_REPO="https://github.com/shiva/blog.shiv.me.source.git"
 BLOG_BRANCH="master"
 BLOG_REPO_WITH_TOKEN=${BLOG_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
@@ -24,9 +26,6 @@ git submodule update content
 
 LAST_COMMIT_MSG=`git log -1 --pretty=format:%s`
 
-git config user.name "Travis CI"
-git config user.email "travis@shiv.me"
-
 echo "Re-generate blog ..."
 hugo -t lanyon
 
@@ -40,13 +39,14 @@ echo "Commit the changes to blog ..."
 GITHUB_PUBLISH_REPO=`git config --get remote.origin.url`
 GITHUB_PUBLISH_REPO_WITH_TOKEN=${GITHUB_PUBLISH_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
 git add .
-git commit -m "publish:${LAST_COMMIT_MSG}"
+
+git commit --author="${TRAVIS_AUTHOR}<${TRAVIS_EMAIL}>" -m "publish:${LAST_COMMIT_MSG}"
 git push $GITHUB_PUBLISH_REPO_WITH_TOKEN $GITHUB_PUBLISH_BRANCH
 
 echo "Return to blog repo and commit new publish head ..."
 cd ..
 git add .
-git commit -m "publish:${LAST_COMMIT_MSG}"
+git commit --author="${TRAVIS_AUTHOR}<${TRAVIS_EMAIL}>" -m "publish:${LAST_COMMIT_MSG}"
 git push $BLOG_REPO_WITH_TOKEN $BLOG_BRANCH
 
 echo "Done."
