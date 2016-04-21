@@ -38,15 +38,19 @@ fi
 echo "Commit the changes to blog ..."
 GITHUB_PUBLISH_REPO=`git config --get remote.origin.url`
 GITHUB_PUBLISH_REPO_WITH_TOKEN=${GITHUB_PUBLISH_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
-git add .
 
-git commit --author="${TRAVIS_AUTHOR} <${TRAVIS_EMAIL}>" -m "publish:${LAST_COMMIT_MSG}"
+git config user.email "${TRAVIS_EMAIL}"
+git config user.name "${TRAVIS_AUTHOR}"
+git add .
+git commit -m "publish:${LAST_COMMIT_MSG}"
 git push $GITHUB_PUBLISH_REPO_WITH_TOKEN $GITHUB_PUBLISH_BRANCH
 
 echo "Return to blog repo and commit new publish head ..."
 cd ..
+git config user.email "${TRAVIS_EMAIL}"
+git config user.name "${TRAVIS_AUTHOR}"
 git add .
-git commit --author="${TRAVIS_AUTHOR} <${TRAVIS_EMAIL}>" -m "publish:${LAST_COMMIT_MSG}"
+git commit -m "publish:${LAST_COMMIT_MSG}"
 git push $BLOG_REPO_WITH_TOKEN $BLOG_BRANCH
 
 echo "Done."
