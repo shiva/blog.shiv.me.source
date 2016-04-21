@@ -10,6 +10,7 @@ BLOG_BRANCH="master"
 BLOG_REPO_WITH_TOKEN=${BLOG_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
 GITHUB_PUBLISH_REPO="https://github.com/shiva/shiva.github.io.git"
 GITHUB_PUBLISH_REPO_WITH_TOKEN=${GITHUB_PUBLISH_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
+GITHUB_PUBLISH_BRANCH="master"
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$BLOG_BRANCH" ]; then
@@ -28,7 +29,8 @@ git submodule update content
 LAST_COMMIT_MSG=`git log -1 --pretty=format:%s`
 
 echo "Checkout ${GITHUB_PUBLISH_REPO} ..."
-git checkout ${GITHUB_PUBLISH_REPO} public
+git clone ${GITHUB_PUBLISH_REPO} public
+git checkout ${GITHUB_PUBLISH_BRANCH}
 
 echo "Re-generate blog ..."
 hugo -t lanyon
