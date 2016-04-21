@@ -18,6 +18,3 @@
 	path = themes/hyde
 	url = https://github.com/shiva/hyde.git
 	branch = shiv.me
-[submodule "public"]
-	path = public
-	url = https://github.com/shiva/shiva.github.io.git

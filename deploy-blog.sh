@@ -8,6 +8,8 @@ GITHUB_PUBLISH_BRANCH="master"
 BLOG_REPO="https://github.com/shiva/blog.shiv.me.source.git"
 BLOG_BRANCH="master"
 BLOG_REPO_WITH_TOKEN=${BLOG_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
+GITHUB_PUBLISH_REPO="https://github.com/shiva/shiva.github.io.git"
+GITHUB_PUBLISH_REPO_WITH_TOKEN=${GITHUB_PUBLISH_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$BLOG_BRANCH" ]; then
@@ -21,36 +23,27 @@ cd blog
 git checkout $BLOG_BRANCH
 git submodule init
 git submodule update themes/lanyon
-git submodule update public
 git submodule update content
 
 LAST_COMMIT_MSG=`git log -1 --pretty=format:%s`
 
+echo "Checkout ${GITHUB_PUBLISH_REPO} ..."
+git checkout ${GITHUB_PUBLISH_REPO} public
+
 echo "Re-generate blog ..."
 hugo -t lanyon
 
-cd public   # go to github-repo. If there are no changes then just bail.
-if [ -z `git diff --exit-code` ]; then
+# check if no changes
+if git diff-index --quiet HEAD --; then
     echo "No changes to the spec on this push; exiting."
     exit 0
 fi
 
 echo "Commit the changes to blog ..."
-GITHUB_PUBLISH_REPO=`git config --get remote.origin.url`
-GITHUB_PUBLISH_REPO_WITH_TOKEN=${GITHUB_PUBLISH_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
-
 git config user.email "${TRAVIS_EMAIL}"
 git config user.name "${TRAVIS_AUTHOR}"
 git add .
 git commit -m "publish:${LAST_COMMIT_MSG}"
 git push $GITHUB_PUBLISH_REPO_WITH_TOKEN $GITHUB_PUBLISH_BRANCH
-
-echo "Return to blog repo and commit new publish head ..."
-cd ..
-git config user.email "${TRAVIS_EMAIL}"
-git config user.name "${TRAVIS_AUTHOR}"
-git add .
-git commit -m "publish:${LAST_COMMIT_MSG}"
-git push $BLOG_REPO_WITH_TOKEN $BLOG_BRANCH
 
 echo "Done."
