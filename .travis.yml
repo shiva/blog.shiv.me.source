@@ -1,0 +1,14 @@
+language: go
+
+go:
+  - tip
+
+before_script:
+  - go get -u -v github.com/spf13/hugo
+
+script: bash ./deploy-blog.sh
+
+env:
+  global:
+  - secure: iosIFlPug4qnq5lWjRTYdjdhTzRl/V9pOPPfHqhC2SIA/ghTjA8Dz2JPUAyXF68/hpSMcxq5qihQJ3NY3bp2BDIkwNSfZ8iu2fioUZtt9D9E3tjV8Upn8QRdzbyYVmDbB4/VGPLAifiVD/TDPg94AqrpMSdTfpUfAbkOf7ahaKU9zO4soU80PISnKoEMW5QF/zvdU22e+asJeNSJochXPEe9NgXQpLV92qjQMK17c592T26CYaUVGXjhHeycyRoq1oHiKejFrXPkx5XQrq/pjjnsyIhSkGX1NtiCAKu6LzCSNDz3KbyMcGi2LfoiC/qrtCNEcZROAF2AmcGSU8IYPkDOR3apNKMb45eYhuKJZoS2QwiKZYgcjcOmDg7wEESlFnXNBDN6MOBYr2x/o6jMITXg+1Kklzs/4yth4zoIhKf3LDlpBf3tSo4sgFxQrouwkwH9bfYNKUy4LVvA8tspBdwb9ENLgVAmG/6ky/i6cPF0cY5hYw2fztlpQAHIsjG3NCKBosJwpmsDs6ki6t4pR9wc5NCuuqy8Y91rSBNYFO8/mjssqFrf0JDug+cUXzzsMOWj5PYTaSW3V5Uf1gfA8nWujO3azr8RWMsPia3C4+ol+4nm/z1XvGKJ2wDf59Ii6G8OoN8gvzTaazbosTh8JSAWkLtb3ulObF8xBbekoO0=
+
