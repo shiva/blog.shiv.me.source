@@ -23,7 +23,7 @@ echo "Update theme ..."
 git submodule update --init themes/lanyon
 
 echo "Checkout ${POSTS_REPO} ..."
-git clone --depth=1 --single-branch -b ${BLOG_BRANCH} ${BLOG_REPO} blog-posts
+git clone --depth=1 --single-branch -b ${POSTS_BRANCH} ${POSTS_REPO} blog-posts
 
 echo "Create symlinks to content"
 mkdir -p content/post
