@@ -1,9 +1,11 @@
 language: go
 go:
-- tip
+  - tip
 before_script:
-- go get -u -v github.com/spf13/hugo
+  - go get -u -v github.com/spf13/hugo
+
 script: bash ./deploy-blog.sh
+
 env:
   global:
     secure: nh8tyVn3aNs5t5cJ3hFLlbjUgvLnpHJjIYUHj1FMxfUrUDx2dbRilLdblnw6VYTuSRg0YqW7MAHD9WGp/1iiROtuWnJmLKaedYFYbRhU8v4sqmF5rtQgDvXxwUovX+C+mZrMm62UdJi5nLxMAKIPlGyhBBw4e/auq90Z0DQ3Dd6rr6eB/Gktj5diSjJBm+2zWJiHDwZLUC+C7m7RmUhFVcbebtwvbNoJZI52mkoXF0X1DXNn8D5hcMHpVLz87LS0jLbOqVgUBk5bzI4OoRwnTILudt2afcS6eXw3UjoT2jQGfGPES8UnaejrW9CLPD24oKQeY+lT75sIwFDFNYRoKvVMDLmVxhPqLYLEwUqdqOurEaq6LOOSB8ZCKrgcRRoubw0yK76qgbcfdBcHYzHpN4atbvRPgOYoowIkPdwWY1bdgRdEqI3KtRyjfxUoCUhNHv0Vm9RYaMKs3i7sZoBusaXliNjr0HbP0oToswXPxa1NiWHgePWv0bLp0xjiKjBPHjJfG8UpXpcZYBAwkORVa1ci0CHCV0L/TqrU1lb7lon2Fh0TWLmLF/WuWQNAgVUdkiSFUQ8DhhKH8y7x9Yx/yOwQmyX7ckF3lmfcEtygNFjGCq8JoLLlhOJK+zFNecDDSG6Pmnb8NYKejVQ+hwT8htmgULOr4/U5FQ+Lk3y2/mk=
