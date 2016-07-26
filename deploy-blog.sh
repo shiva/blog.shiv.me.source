@@ -5,11 +5,10 @@ set -e # Exit with nonzero exit code if anything fails
 TRAVIS_AUTHOR="Travis CI"
 TRAVIS_EMAIL="travis@shiv.me"
 
-CONTENT_BRANCH="all_md"
+CONTENT_BRANCH="master"
 
-BLOG_REPO="https://github.com/shiva/blog.shiv.me.source.git"
-BLOG_REPO_WITH_TOKEN=${BLOG_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
-BLOG_BRANCH="master"
+POSTS_REPO="https://github.com/shiva/blog-posts.git"
+POSTS_BRANCH="all_md"
 
 GITHUB_PUBLISH_REPO="https://github.com/shiva/shiva.github.io.git"
 GITHUB_PUBLISH_REPO_WITH_TOKEN=${GITHUB_PUBLISH_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
@@ -20,23 +19,21 @@ LAST_COMMIT_MSG=`git log -1 --pretty=format:%s`
 echo "Starting publish for ${LAST_COMMIT_MSG}."
 CHECKOUT_DIR=`pwd`
 
-echo "Checkout ${BLOG_REPO} ..."
-git clone --depth=1 --single-branch -b ${BLOG_BRANCH} ${BLOG_REPO} blog
-cd blog
+echo "Update theme ..."
 git submodule update --init themes/lanyon
-cd ..
 
-echo "create symlinks to content"
-mkdir -p blog/content/post
-cp -R ${CHECKOUT_DIR}/post/* blog/content/post/
-rm -rf blog/static
-ln -s ${CHECKOUT_DIR}/static blog/static
+echo "Checkout ${POSTS_REPO} ..."
+git clone --depth=1 --single-branch -b ${BLOG_BRANCH} ${BLOG_REPO} blog-posts
+
+echo "Create symlinks to content"
+mkdir -p content/post
+cp -R blog-posts/post/* content/post/
+ln -s ${CHECKOUT_DIR}/blog-posts/static static
 
 echo "Checkout ${GITHUB_PUBLISH_REPO} ..."
-git clone --depth=1 --single-branch -b ${GITHUB_PUBLISH_BRANCH} ${GITHUB_PUBLISH_REPO} blog/public
+git clone --depth=1 --single-branch -b ${GITHUB_PUBLISH_BRANCH} ${GITHUB_PUBLISH_REPO} public
 
 echo "Re-generate blog ..."
-cd blog
 hugo -t lanyon
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
@@ -45,7 +42,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$CONTENT_BRANCH" 
     exit 0
 fi
 
-echo "check for changes in ${GITHUB_PUBLISH_REPO}"
+echo "Check for changes in ${GITHUB_PUBLISH_REPO}"
 cd public
 if git diff-index --quiet HEAD --; then
     echo "No changes to the spec on this push; exiting."
@@ -56,7 +53,7 @@ echo "Something changed; commit changes to ${GITHUB_PUBLISH_REPO} ..."
 git config user.name ${TRAVIS_AUTHOR}
 git config user.email ${TRAVIS_EMAIL}
 git add .
-git commit -m "sync:${LAST_COMMIT_MSG}"
+git commit -m "publish: ${LAST_COMMIT_MSG}"
 git push ${GITHUB_PUBLISH_REPO_WITH_TOKEN} ${GITHUB_PUBLISH_BRANCH}
 
 echo "Done."
