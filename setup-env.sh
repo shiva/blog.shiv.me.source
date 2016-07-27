@@ -1,12 +1,13 @@
 #!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 
-REPO="https://github.com/shiva/tools.git"
-BRANCH="master"
+HUGO_TARBALL="https://github.com/spf13/hugo/releases/download/v0.16/hugo_0.16_linux-64bit.tgz"
 CHECKOUT_DIR=`pwd`
 
 echo "Install hugo ..."
 rm -rf ${CHECKOUT_DIR}/binaries/
-git clone --depth=1 --single-branch -b ${BRANCH} ${REPO} binaries
+mkdir -p ${CHECKOUT_DIR}/binaries/
+cd ${CHECKOUT_DIR}/binaries/
+curl ${HUGO_TARBALL} | tar xz
 
 echo "Done."

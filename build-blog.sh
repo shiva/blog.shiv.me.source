@@ -36,6 +36,6 @@ rm -rf public
 git clone --depth=1 --single-branch -b ${GITHUB_PUBLISH_BRANCH} ${GITHUB_PUBLISH_REPO} public
 
 echo "Re-generate blog ..."
-${CHECKOUT_DIR}/binaries/bin/x86_64/hugo -t lanyon
+${CHECKOUT_DIR}/binaries/hugo -t lanyon
 
 echo "Done."
