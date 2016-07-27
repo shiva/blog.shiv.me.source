@@ -1,9 +1,6 @@
-language: go
-go:
-  - tip
 before_script: bash ./setup-env.sh
 script: bash ./build-blog.sh
-after_sucess: bash ./deploy-blog.sh
+after_success: bash ./deploy-blog.sh
 
 env:
   global:

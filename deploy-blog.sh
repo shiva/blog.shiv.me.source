@@ -22,7 +22,7 @@ CHECKOUT_DIR=`pwd`
 echo "Check for changes in ${GITHUB_PUBLISH_REPO}"
 cd public
 if git diff-index --quiet HEAD --; then
-    echo "No changes to the spec on this push; exiting."
+    echo "No changes to the spec on this push; Nothing to deploy. exiting."
     exit 0
 fi
 
