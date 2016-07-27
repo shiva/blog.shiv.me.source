@@ -8,6 +8,7 @@ echo "Install hugo ..."
 rm -rf ${CHECKOUT_DIR}/binaries/
 mkdir -p ${CHECKOUT_DIR}/binaries/
 cd ${CHECKOUT_DIR}/binaries/
-curl ${HUGO_TARBALL} | tar xz
+echo ${HUGO_TARBALL}
+curl -L ${HUGO_TARBALL} | tar -xz
 
 echo "Done."
