@@ -7,9 +7,6 @@ TRAVIS_EMAIL="travis@shiv.me"
 
 CONTENT_BRANCH="master"
 
-POSTS_REPO="https://github.com/shiva/blog-posts.git"
-POSTS_BRANCH="all_md"
-
 GITHUB_PUBLISH_REPO="https://github.com/shiva/shiva.github.io.git"
 GITHUB_PUBLISH_REPO_WITH_TOKEN=${GITHUB_PUBLISH_REPO/https:\/\/github.com\//https://${GH_TOKEN}@github.com/}
 GITHUB_PUBLISH_BRANCH="master"
