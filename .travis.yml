@@ -1,10 +1,9 @@
 language: go
 go:
   - tip
-before_script:
-  - go get -u -v github.com/spf13/hugo
-
-script: bash ./deploy-blog.sh
+before_script: bash ./setup-env.sh
+script: bash ./build-blog.sh
+after_sucess: bash ./deploy-blog.sh
 
 env:
   global:
