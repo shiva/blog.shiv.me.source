@@ -32,4 +32,4 @@
 	url = https://github.com/shenoybr/hugo-goa
 [submodule "themes/lithium"]
 	path = themes/lithium
-	url = git@github.com:shiva/hugo-lithium-theme.git
+	url = https://github.com/shiva/hugo-lithium-theme.git
