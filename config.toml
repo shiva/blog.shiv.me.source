@@ -36,10 +36,10 @@ copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
     title = "shiv.me"
 
     # Tagline; HTML accepted here. Keep it concise.
-    tagline = "some other stuff"
+    tagline = "rant, raves and ramblings of a compulsive programmer"
 
     # Footer; Markdown accepted here.
-    # footer = "Copyright 2016 &copy; Shivanand Velmurugan"
+    footer = "Copyright 2016 &copy; Shivanand Velmurugan"
 
     # Description and keywords for <meta> tags.
     # Remember to set this for your main page.
@@ -47,7 +47,7 @@ copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
     # defined by `description` and `keywords` variables in the front matter
     # of the markdown file.
     description = "Default Page Description"
-    keywords = "default,page,keywords"
+    keywords = "programming, design, system engineering"
 
     # Social links, must be full URLs (e.g. https://github.com/CrimsonRay/).
     # Remove, comment, or leave blank any field to leave them out.
@@ -62,10 +62,18 @@ copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
     # Google Analytics
     # Remove, comment, or leave it blank if you don't have one.
     ganalytics = "UA-5610776-2"
+    googleAnalytics = "UA-5610776-2"
+    disqusShortname = "shiva"
 
     DateForm = "Mon, Jan 2, 2006"
     Author = "Shiva Velmurugan"
     email = "shiv@shiv.me"
+
+    [params.logo]
+        url = "/images/logo.png"
+        width = 50
+        height = 50
+        alt = "shiv.me"
 
 [[params.social]]
     title = "twitter"
@@ -79,20 +87,31 @@ copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
 
 [menu]
 
-    # Menu for the nav bar.
+    [[menu.main]]
+        name = "About"
+        url = "http://shiv.me/about/"
+    [[menu.main]]
+        name = "GitHub"
+        url = "http://github.com/shiva"
+    [[menu.main]]
+        name = "Twitter"
+        url = "http://twitter.com/shiva"
+
+    # Menu for the nav bar. for lanyon
     # There must always be one item present (e.g. home).
-    [[menu.main]]
-    identifier = "home"
-    name       = "home"
-    url        = "/"
-    weight     = -200
+#    [[menu.main]]
+#    identifier = "Home"
+#    name       = "Home"
+#    url        = "/"
+#    weight     = -200
 
-    [[menu.main]]
-    name = "Archives"
-    url = "/post/"
-    weight = -180
+#
+#    [[menu.main]]
+#    name = "Archives"
+#    url = "/post/"
+#    weight = -180
 
-    [[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = -180
+#    [[menu.main]]
+#    name = "Categories"
+#    url = "/categories/"
+#    weight = -180
