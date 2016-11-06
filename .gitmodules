@@ -18,3 +18,18 @@
 	path = themes/hyde
 	url = https://github.com/shiva/hyde.git
 	branch = shiv.me
+[submodule "themes/dgraph"]
+	path = themes/dgraph
+	url = https://github.com/dgraph-io/hugo-dgraph-theme
+[submodule "themes/tranquilpeak"]
+	path = themes/tranquilpeak
+	url = https://github.com/kakawait/hugo-tranquilpeak-theme.git
+[submodule "themes/minimalist"]
+	path = themes/minimalist
+	url = https://github.com/digitalcraftsman/hugo-minimalist-theme.git
+[submodule "themes/goa"]
+	path = themes/goa
+	url = https://github.com/shenoybr/hugo-goa
+[submodule "themes/lithium"]
+	path = themes/lithium
+	url = git@github.com:shiva/hugo-lithium-theme.git
