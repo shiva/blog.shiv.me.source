@@ -89,7 +89,7 @@ copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
 
     [[menu.main]]
         name = "About"
-        url = "http://shiv.me/about/"
+        url = "http://shiv.me/#about"
     [[menu.main]]
         name = "GitHub"
         url = "http://github.com/shiva"
