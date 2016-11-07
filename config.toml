@@ -70,7 +70,7 @@ copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
     email = "shiv@shiv.me"
 
     [params.logo]
-        url = "/images/logo.png"
+        url = "logo.png"
         width = 50
         height = 50
         alt = "shiv.me"
