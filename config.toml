@@ -10,6 +10,7 @@ PaginatePath = "/"
 canonifyurls = true
 theme = "startbootstrap-clean-blog"
 copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
+footnotereturnlinkcontents="↩︎︎"
 
 [author]
     name = "Shiva"
@@ -115,3 +116,4 @@ copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
 #    name = "Categories"
 #    url = "/categories/"
 #    weight = -180
+
