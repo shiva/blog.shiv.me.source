@@ -8,7 +8,8 @@ languageCode = "en-US"
 paginate = 20
 PaginatePath = "/"
 canonifyurls = true
-theme = "startbootstrap-clean-blog"
+#theme = "startbootstrap-clean-blog"
+theme = "ghostwriter"
 copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
 footnotereturnlinkcontents="↩︎︎"
 
@@ -91,12 +92,12 @@ footnotereturnlinkcontents="↩︎︎"
     [[menu.main]]
         name = "About"
         url = "http://shiv.me/#about"
-    [[menu.main]]
-        name = "GitHub"
-        url = "http://github.com/shiva"
-    [[menu.main]]
-        name = "Twitter"
-        url = "http://twitter.com/shiva"
+#    [[menu.main]]
+#        name = "GitHub"
+#        url = "http://github.com/shiva"
+#    [[menu.main]]
+#        name = "Twitter"
+#        url = "http://twitter.com/shiva"
 
     # Menu for the nav bar. for lanyon
     # There must always be one item present (e.g. home).

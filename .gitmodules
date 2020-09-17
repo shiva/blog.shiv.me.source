@@ -33,3 +33,18 @@
 [submodule "themes/lithium"]
 	path = themes/lithium
 	url = https://github.com/shiva/hugo-lithium-theme.git
+[submodule "themes/ghostwriter"]
+	path = themes/ghostwriter
+	url = https://github.com/jbub/ghostwriter
+[submodule "themes/hugo-type-theme"]
+	path = themes/hugo-type-theme
+	url = https://github.com/digitalcraftsman/hugo-type-theme.git
+[submodule "themes/hugo-base16-theme"]
+	path = themes/hugo-base16-theme
+	url = https://github.com/htdvisser/hugo-base16-theme.git
+[submodule "themes/type"]
+	path = themes/type
+	url = https://github.com/digitalcraftsman/hugo-type-theme.git
+[submodule "themes/base16"]
+	path = themes/base16
+	url = https://github.com/htdvisser/hugo-base16-theme.git
