@@ -19,17 +19,12 @@ LAST_COMMIT_MSG=`git log -1 --pretty=format:%s`
 echo "Starting publish for ${LAST_COMMIT_MSG}."
 CHECKOUT_DIR=`pwd`
 
-echo "Update theme ..."
-git submodule update --init themes/lithium
+#echo "Update theme ..."
+#git submodule update --init themes/lithium
 
 echo "Checkout ${POSTS_REPO} ..."
-rm -rf blog-posts
-git clone --depth=1 --single-branch -b ${POSTS_BRANCH} ${POSTS_REPO} blog-posts
-
-echo "Create symlinks to content"
-mkdir -p content/post
-cp -R blog-posts/post/* content/post/
-ln -s ${CHECKOUT_DIR}/blog-posts/static static
+rm -rf content
+git clone --depth=1 --single-branch -b ${POSTS_BRANCH} ${POSTS_REPO} content
 
 echo "Checkout ${GITHUB_PUBLISH_REPO} ..."
 rm -rf public

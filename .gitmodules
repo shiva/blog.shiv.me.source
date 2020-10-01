@@ -2,52 +2,12 @@
 	path = content
 	url = https://github.com/shiva/blog-posts.git
 	branch = all_md
-[submodule "themes/startbootstrap-clean-blog"]
-	path = themes/startbootstrap-clean-blog
-	url = https://github.com/shiva/startbootstrap-clean-blog.git
-	branch = shiv.me
-[submodule "themes/purehugo"]
-	path = themes/purehugo
-	url = https://github.com/shiva/purehugo.git
-	branch = shiv.me
-[submodule "themes/lanyon"]
-	path = themes/lanyon
-	url = https://github.com/shiva/lanyon-hugo.git
-	branch = shiv.me
-[submodule "themes/hyde"]
-	path = themes/hyde
-	url = https://github.com/shiva/hyde.git
-	branch = shiv.me
-[submodule "themes/dgraph"]
-	path = themes/dgraph
-	url = https://github.com/dgraph-io/hugo-dgraph-theme
-[submodule "themes/tranquilpeak"]
-	path = themes/tranquilpeak
-	url = https://github.com/kakawait/hugo-tranquilpeak-theme.git
-[submodule "themes/minimalist"]
-	path = themes/minimalist
-	url = https://github.com/digitalcraftsman/hugo-minimalist-theme.git
-[submodule "themes/goa"]
-	path = themes/goa
-	url = https://github.com/shenoybr/hugo-goa
-[submodule "themes/lithium"]
-	path = themes/lithium
-	url = https://github.com/shiva/hugo-lithium-theme.git
-[submodule "themes/ghostwriter"]
-	path = themes/ghostwriter
-	url = https://github.com/jbub/ghostwriter
 [submodule "themes/hugo-type-theme"]
 	path = themes/hugo-type-theme
 	url = https://github.com/digitalcraftsman/hugo-type-theme.git
 [submodule "themes/hugo-base16-theme"]
 	path = themes/hugo-base16-theme
 	url = https://github.com/htdvisser/hugo-base16-theme.git
-[submodule "themes/type"]
-	path = themes/type
-	url = https://github.com/digitalcraftsman/hugo-type-theme.git
-[submodule "themes/base16"]
-	path = themes/base16
-	url = https://github.com/htdvisser/hugo-base16-theme.git
-[submodule "themes/hugo-bearblog"]
-	path = themes/hugo-bearblog
-	url = https://github.com/janraasch/hugo-bearblog.git
+[submodule "themes/HugoTeX"]
+	path = themes/HugoTeX
+	url = https://github.com/shiva/HugoTeX.git

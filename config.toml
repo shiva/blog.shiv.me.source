@@ -2,19 +2,21 @@
 # https://github.com/CrimsonRay/slender
 
 baseurl = "http://blog.shiv.me/"
-title = "shiv.me"
+title = "Rabble-rousing Rambling"
 languageCode = "en-US"
 #MetaDataFormat = "yaml"
-paginate = 20
+paginate = 5
 PaginatePath = "/"
 canonifyurls = true
-#theme = "startbootstrap-clean-blog"
-theme = "ghostwriter"
+theme = "HugoTeX"
+
 copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
 footnotereturnlinkcontents="↩︎︎"
+staticDir = "content/static"
 
 [author]
-    name = "Shiva"
+    name = "Shiva Velmurugan"
+    abstract = "I'm a product manager by day, and programmer by night. I am intrigued by abstraction, programming languages and organizing data."
 
 [taxonomies]
     tag = "tags"
@@ -71,11 +73,11 @@ footnotereturnlinkcontents="↩︎︎"
     Author = "Shiva Velmurugan"
     email = "shiv@shiv.me"
 
-    [params.logo]
-        url = "logo.png"
-        width = 50
-        height = 50
-        alt = "shiv.me"
+    #[params.logo]
+    #    url = "logo.png"
+    #    width = 50
+    #    height = 50
+    #    alt = "shiv.me"
 
 [[params.social]]
     title = "twitter"
