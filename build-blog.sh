@@ -19,8 +19,8 @@ LAST_COMMIT_MSG=`git log -1 --pretty=format:%s`
 echo "Starting publish for ${LAST_COMMIT_MSG}."
 CHECKOUT_DIR=`pwd`
 
-#echo "Update theme ..."
-#git submodule update --init themes/lithium
+echo "Update themes ..."
+git submodule update --init --recursive
 
 echo "Checkout ${POSTS_REPO} ..."
 rm -rf content
@@ -31,6 +31,6 @@ rm -rf public
 git clone --depth=1 --single-branch -b ${GITHUB_PUBLISH_BRANCH} ${GITHUB_PUBLISH_REPO} public
 
 echo "Re-generate blog ..."
-${CHECKOUT_DIR}/binaries/hugo 
+${CHECKOUT_DIR}/binaries/hugo -v
 
 echo "Done."
