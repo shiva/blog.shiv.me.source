@@ -2,12 +2,14 @@
 # https://github.com/CrimsonRay/slender
 
 baseurl = "http://blog.shiv.me/"
-title = "Rabble-rousing Rambling"
-languageCode = "en-US"
+title = "Reflections"
 #MetaDataFormat = "yaml"
 paginate = 5
-PaginatePath = "/"
+#PaginatePath = "/"
 canonifyurls = true
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
 theme = "HugoTeX"
 
 copyright = "Copyright 2016 &copy; Shivanand Velmurugan"
